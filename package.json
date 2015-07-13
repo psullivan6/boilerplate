@@ -1,0 +1,30 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.0",
+  "description": "Backbone JS | Mongo DB | Node JS | Express Stack boilerplate repo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psullivan6/boilerplate.git"
+  },
+  "keywords": [
+    "backbone",
+    "mongo",
+    "node",
+    "express",
+    "stack"
+  ],
+  "author": "Patrick Sullivan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psullivan6/boilerplate/issues"
+  },
+  "homepage": "https://github.com/psullivan6/boilerplate",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.9.0"
+  }
+}

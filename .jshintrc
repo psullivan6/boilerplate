@@ -1,0 +1,23 @@
+// http://jshint.com/docs/options/
+
+{
+  // Enforcing options:
+  "curly": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "latedef": true,
+  "newcap": true,
+  "noempty": true,
+  "nonew": true,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  
+  // Relaxing options:
+  "eqnull": true,
+  
+  // Environments:
+  "browser": true,
+  "jquery": true,
+  "node": true
+}

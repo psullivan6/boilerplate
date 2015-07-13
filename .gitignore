@@ -1,0 +1,15 @@
+# Components/Package files
+node_modules
+bower_components
+libs
+npm-debug.log
+
+# Final compiled directory
+/release
+
+# Environment Variables
+.env
+
+# Misc.
+.DS_Store
+.sass-cache
