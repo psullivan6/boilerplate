@@ -12,7 +12,6 @@ var jshint       = require('gulp-jshint');
 var stylish      = require('jshint-stylish');
 var minify_css   = require('gulp-minify-css');
 var minify_js    = require('gulp-uglify');
-var minify_json  = require('gulp-jsonminify');
 var plumber      = require('gulp-plumber');
 var requirejs    = require('requirejs');
 var runSequence  = require('run-sequence');
@@ -38,7 +37,7 @@ var isLocalTask = false;
 
 var handleErrors = function(error){
   console.warn('\n', error.toString(), '\n');
-  if isLocalTask && (error.plugin !== 'gulp-jshint')) {
+  if ((isLocalTask) && (error.plugin !== 'gulp-jshint')) {
     var beeper = require('beeper');
     beeper();
   }
@@ -96,19 +95,6 @@ gulp.task('js', function(callback){
   }, function(error) {
     handleErrors(error);
   });
-});
-
-// =============================================================================
-// Tasks > Front-end JSON compilation                                $ gulp json
-// =============================================================================
-gulp.task('json', function(){
-  return gulp.src(paths.json)
-    .pipe(plumber({ errorHandler: handleErrors }))
-      .pipe(gulpif(isLocalTask, sourcemaps.init()))
-        .pipe(gulpif(!isLocalTask, minify_json()))
-      .pipe(gulpif(isLocalTask, sourcemaps.write()))
-    .pipe(plumber.stop())
-    .pipe(gulp.dest('release/public'));
 });
 
 // =============================================================================
