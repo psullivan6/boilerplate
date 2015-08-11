@@ -4,7 +4,8 @@
   "description": "Backbone JS | Mongo DB | Node JS | Express Stack boilerplate repo",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "postinstall": "bower install && gulp build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/psullivan6/boilerplate",
   "dependencies": {
+    "body-parser": "^1.13.3",
     "bower": "^1.4.1",
     "del": "^1.2.0",
     "express": "^4.13.1",

@@ -25,8 +25,8 @@ database.once('open', function () {
 // #############################################################################
 // CUSTOM MONGOOSE MODELS
 // #############################################################################
-var BoilerplateModel     = require('../../app/models/BoilerplateModel');
-var BoilerplateItemModel = require('../../app/models/BoilerplateItemModel');
+var BoilerplateModel     = require('../../db/models/BoilerplateModel');
+var BoilerplateItemModel = require('../../db/models/BoilerplateItemModel');
 
 
 // #############################################################################

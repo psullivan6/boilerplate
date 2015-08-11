@@ -20,7 +20,7 @@ app.use('/', express.static(ENVIRONMENT + '/public'));
 app.use('/css', express.static('release/public/css'));
 
 // API Routes
-app.use('/api', require('./' + ENVIRONMENT + '/app/routes'));
+app.use('/api', require('./' + ENVIRONMENT + '/db/routes'));
 
 
 // =============================================================================
