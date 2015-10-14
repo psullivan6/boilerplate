@@ -11,19 +11,24 @@ app.use(bodyParser.json());
 
 // .env influenced variables
 var PORT = process.env.PORT || '8000';
-var ENVIRONMENT = (process.env.ENVIRONMENT === 'development') ? '_source' : 'release';
+var ENVIRONMENT = (process.env.ENVIRONMENT === 'release') ? 'release' : '_source';
 
 // Homepage
 app.use('/', express.static(ENVIRONMENT + '/public'));
 
-// Static CSS asset delivery (always deliver built version b/c it's 1 CSS file)
+// Work
+app.use('/work', express.static(ENVIRONMENT + '/public'));
+
+// Static CSS & font assets delivery (always deliver built version)
 app.use('/css', express.static('release/public/css'));
+app.use('/fonts', express.static('release/public/fonts'));
 
 // API Routes
-app.use('/api', require('./' + ENVIRONMENT + '/db/routes'));
+app.use('/api', require('./' + ENVIRONMENT + '/api/routes'));
 
 
 // =============================================================================
 // START THE SERVER
 // =============================================================================
 app.listen(PORT);
+console.log('Server started on PORT', PORT);

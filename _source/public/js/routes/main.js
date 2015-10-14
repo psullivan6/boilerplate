@@ -1,10 +1,7 @@
 define([
   'backbone',
-  '../collections/client/ClientCollection',
-  '../views/AppView'
-], function (Backbone,
-             ClientCollection,
-             AppView){
+  '../views/placeholder/PlaceholderView'
+], function (Backbone, PlaceholderView){
   
   var MainRouter = Backbone.Router.extend({
     routes: {
@@ -23,6 +20,9 @@ define([
     
     handleData: function (route, parameters) {
       var thisContext = this;
+      
+      this.placeholderView = new PlaceholderView({ page: route });
+      this.placeholderView.render();
       
       console.log('DATA', route, parameters);
     }

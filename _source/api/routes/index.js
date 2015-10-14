@@ -9,24 +9,24 @@ var router   = express.Router();
 // #############################################################################
 // CONNECT TO THE MONGO DATABASE
 // #############################################################################
-var DATABASE = process.env.MONGOLAB_URI || 'mongodb://localhost/test'; // Heroku influenced variable
+// var DATABASE = process.env.MONGOLAB_URI || 'mongodb://localhost/test'; // Heroku influenced variable
 
-mongoose.connect(DATABASE);
+// mongoose.connect(DATABASE);
 
-var database = mongoose.connection;
-database.on('error', function (error) {
-  console.error(error);
-});
-database.once('open', function () {
-  console.log('Successful database connection');
-});
+// var database = mongoose.connection;
+// database.on('error', function (error) {
+//   console.error(error);
+// });
+// database.once('open', function () {
+//   console.log('Successful database connection');
+// });
 
 
 // #############################################################################
 // CUSTOM MONGOOSE MODELS
 // #############################################################################
-var BoilerplateModel     = require('../../db/models/BoilerplateModel');
-var BoilerplateItemModel = require('../../db/models/BoilerplateItemModel');
+var BoilerplateModel     = require('../../api/models/BoilerplateModel');
+var BoilerplateItemModel = require('../../api/models/BoilerplateItemModel');
 
 
 // #############################################################################

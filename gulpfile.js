@@ -25,6 +25,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 // #############################################################################
 var paths = {
   css:       '_source/public/css/**/*.scss',
+  fonts:     '_source/public/libs/league-gothic/webfonts/*',
   html:      ['_source/public/**/*.html', '!_source/public/libs/**/*'],
   js:        ['_source/public/**/*.js', '!_source/public/libs/**/*'],
   jshint:    ['_source/public/js/**/*.js', '_source/app/**/*.js', './*.js'],
@@ -84,6 +85,14 @@ gulp.task('css', function(){
 gulp.task('html', function() {
   return gulp.src(paths.html)
     .pipe(gulp.dest('release/public'));
+});
+
+// =============================================================================
+// Tasks > Move Fonts                                               $ gulp fonts
+// =============================================================================
+gulp.task('fonts', function() {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest('release/public/fonts'));
 });
 
 // =============================================================================

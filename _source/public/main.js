@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: '_source/public',
+  baseUrl: '/',
   paths: {
     backbone :   'libs/backbone/backbone',
     jquery :     'libs/jquery/dist/jquery.min',
@@ -18,5 +18,5 @@ require([
   
   var mainRouter = new MainRouter();
   
-  Backbone.history.start();
+  Backbone.history.start({pushState: true})
 });
