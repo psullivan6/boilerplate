@@ -17,3 +17,15 @@ Backbone JS | Mongo DB | Node JS | Express Stack
 
 ---
 
+# Database
+
+MongoDB database served by heroku add-on: MongoLab. Thus, MongoDB must be installed and the CLI working properly.
+
+## Authentication
+
+**User:** admin
+**Password:** the "db name" + "admin"
+
+## Local connection:
+
+Run `mongod --dbpath ./_source/api/data/db` to set the mongo db directory to the correct local location and start the connection.

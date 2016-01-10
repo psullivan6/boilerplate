@@ -4,22 +4,23 @@
 var express  = require('express');
 var mongoose = require('mongoose');
 var router   = express.Router();
+require('colors');
 
 
 // #############################################################################
 // CONNECT TO THE MONGO DATABASE
 // #############################################################################
-// var DATABASE = process.env.MONGOLAB_URI || 'mongodb://localhost/test'; // Heroku influenced variable
+var DATABASE = process.env.MONGODB_URI || 'mongodb://localhost:27017/boilerplate'; // Heroku influenced variable
 
-// mongoose.connect(DATABASE);
+mongoose.connect(DATABASE);
 
-// var database = mongoose.connection;
-// database.on('error', function (error) {
-//   console.error(error);
-// });
-// database.once('open', function () {
-//   console.log('Successful database connection');
-// });
+var database = mongoose.connection;
+database.on('error', function (error) {
+  console.error(error);
+});
+database.once('open', function () {
+  console.log('Successful database connection'.brightGreen);
+});
 
 
 // #############################################################################
@@ -54,18 +55,18 @@ router.route('/boilerplate')
     var parameters  = request.body;
     var boilerplate = new BoilerplateModel();
     var itemsIDList = [];
-    
+
     // Set the Boilerplate variables to their respective values
     if (parameters.items) {
       for (var i = 0; i < parameters.items.length; i++) {
         itemsIDList.push(parameters.items[i]._id);
       }
     }
-    
+
     boilerplate.items = itemsIDList;
     boilerplate.label = parameters.label;
     boilerplate.name  = parameters.name;
-    
+
     // Save the Carousel with its new attributes
     boilerplate.save(function (error) {
       if (error) {
@@ -89,19 +90,19 @@ router.route('/boilerplate/:id')
   .put(function (request, response) {
     var parameters = request.body;
     var itemsIDList = [];
-    
+
     if (parameters.items) {
       for (var i = 0; i < parameters.items.length; i++) {
         itemsIDList.push(parameters.items[i]._id);
       }
     }
-    
+
     var config = {
       label : parameters.label,
       name  : parameters.name,
       items : itemsIDList
     };
-    
+
     BoilerplateModel.findByIdAndUpdate(request.parameters.id, config, function(error, result){
       if (error) {
         response.send(error);
