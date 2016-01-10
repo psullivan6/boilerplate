@@ -12,7 +12,7 @@ body{
 // #############################################################################
 .demo *{
   background-color: rgba(blue, 0.25);
-  
+
   &:before{
     z-index: 10;
     content: "";
@@ -24,7 +24,7 @@ body{
     margin-left: ($innerContent / -2) - 1px;
     border-left: 1px dashed orange;
   }
-  
+
   &:after{
     z-index: 10;
     content: "";
@@ -56,10 +56,10 @@ article{ position: relative; }
 // #############################################################################
 .bleed{
   width: 100%;
-  
+
   & > figure{
     width: 100%;
-    
+
     & > *{ width: 100%; }
   }
 }
@@ -86,13 +86,13 @@ article{ position: relative; }
     height: 1px;
   }
   &:before{
-    padding-top: 30px;
-    margin-bottom: 45px;
+    padding-top: $gutter;
+    margin-bottom: $gutter * 1.5;
     border-bottom: 1px solid rgba(black, 0.5);
   }
   &:after{
-    padding-bottom: 30px;
-    margin-top: 45px;
+    padding-bottom: $gutter;
+    margin-top: $gutter * 1.5;
     border-top: 1px solid rgba(black, 0.5);
   }
 }
