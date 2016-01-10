@@ -13,7 +13,7 @@ gulp.task('css', function(callback){
       .pipe(sass().on('error', handleErrors))
       .pipe(autoprefixer('last 2 versions'))
       .pipe(concat(config.names.css))
-      // .pipe(minify_css())
+      .pipe(minify_css())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.paths.css.release))
     .pipe(gulp.dest(config.paths.css.testing));
