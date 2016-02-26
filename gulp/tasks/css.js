@@ -3,7 +3,7 @@ var concat       = require('gulp-concat');
 var config       = require('../config');
 var gulp         = require('gulp');
 var handleErrors = require('../helper/handleErrors');
-var minify_css   = require('gulp-minify-css');
+var minify_css   = require('gulp-cssnano');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 

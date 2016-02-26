@@ -14,18 +14,7 @@ module.exports = {
     },
     html: {
       source:  './_source/*.html',
-      release: './release',
-      pages:   [
-        './release/',
-        './release/projects',
-
-        './release/career',
-        './release/career/pac-12',
-        './release/career/register-guard',
-        './release/career/struck',
-
-        './release/resume',
-        './release/contact']
+      release: './release'
     },
     js: {
       source:  './_source/js/scripts.js',

@@ -9,15 +9,10 @@ var requireConfig = {
     backbone    : 'libs/backbone/backbone',
     jquery      : 'libs/jquery/dist/jquery.min',
     Modernizr   : 'libs/Modernizr/modernizr.custom',
-    owlCarousel : 'libs/owl.carousel/dist/owl.carousel',
     text        : 'libs/requirejs-text/text',
     underscore  : 'libs/underscore/underscore-min'
   },
   shim: {
-    'owlCarousel' : {
-      deps : ['jquery'],
-      exports : 'Owl'
-    },
     'Modernizr' : {
       deps : ['jquery'],
       exports : 'Modernizr'
