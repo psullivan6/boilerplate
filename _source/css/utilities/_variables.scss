@@ -19,50 +19,8 @@ $monospace: "Consolas", monospace;
 $red:   #ff0033;
 $green: #00ff66;
 $blue:  #3366ff;
-
 $gray: #ccc;
-$black: #000033; // this is a dark blue to be mainly used for typography
 
 $color--selected-background: $red;
 $color--selected-text: white;
 $color--horizontal-rule: $gray;
-
-// =============================================================================
-// Colors > Red
-// =============================================================================
-$red-lightest: lighten($red, 20%);
-$red-lighter:  lighten($red, 10%);
-$red-light:    lighten($red, 5%);
-$red-dark:      darken($red, 15%);
-$red-darker:    darken($red, 25%);
-$red-darkest:   darken($red, 30%);
-
-// =============================================================================
-// Colors > Green
-// =============================================================================
-$green-lightest: lighten($green, 20%);
-$green-lighter:  lighten($green, 10%);
-$green-light:    lighten($green, 5%);
-$green-dark:      darken($green, 15%);
-$green-darker:    darken($green, 30%);
-$green-darkest:   darken($green, 40%);
-
-// =============================================================================
-// Colors > Blue
-// =============================================================================
-$blue-lightest: lighten($blue, 20%);
-$blue-lighter:  lighten($blue, 10%);
-$blue-light:    lighten($blue, 5%);
-$blue-dark:      darken($blue, 15%);
-$blue-darker:    darken($blue, 30%);
-$blue-darkest:   darken($blue, 40%);
-
-// =============================================================================
-// Colors > Gray
-// =============================================================================
-$gray-lightest: lighten($gray, 20%);
-$gray-lighter:  lighten($gray, 10%);
-$gray-light:    lighten($gray, 5%);
-$gray-dark:      darken($gray, 15%);
-$gray-darker:    darken($gray, 30%);
-$gray-darkest:   darken($gray, 40%);

@@ -13,7 +13,7 @@
 // =============================================================================
 
 html {
-  color: $black;
+  color: black;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -43,13 +43,13 @@ br{ line-height: $gutter; }
 .redBG{
   ::-moz-selection {
     background: white;
-    color: $black;
+    color: black;
     text-shadow: none;
   }
 
   ::selection {
     background: white;
-    color: $black;
+    color: black;
     text-shadow: none;
   }
 }
