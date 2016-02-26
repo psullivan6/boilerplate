@@ -5,7 +5,7 @@ define([
 ], function($, _, Backbone){
 
   var BaseView = Backbone.View.extend({
-    
+
     initialize: function(){
       var thisContext = this;
 
@@ -55,8 +55,17 @@ define([
       }
     },
 
+    assign: function (view, selector) {
+      view.setElement(this.$(selector)).render();
+      this.addSubView(view);
+    },
+
     addBodyClass: function(className){
       $('body').addClass(className);
+    },
+
+    commafiedNumber: function(number){
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
 
     render: function(){
