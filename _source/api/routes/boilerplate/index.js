@@ -1,46 +1,21 @@
 // #############################################################################
-// DEPENDENCIES
+// Dependencies
 // #############################################################################
-var express  = require('express');
-var mongoose = require('mongoose');
-var router   = express.Router();
-require('colors');
+var express = require('express');
+var router  = express.Router();
 
 
 // #############################################################################
-// CONNECT TO THE MONGO DATABASE
-// #############################################################################
-var DATABASE = process.env.MONGODB_URI || 'mongodb://localhost:27017/boilerplate'; // Heroku influenced variable
-
-mongoose.connect(DATABASE);
-
-var database = mongoose.connection;
-database.on('error', function (error) {
-  console.error(error);
-});
-database.once('open', function () {
-  console.log('Successful database connection'.brightGreen);
-});
-
-
-// #############################################################################
-// CUSTOM MONGOOSE MODELS
+// Mongoose Models
 // #############################################################################
 var BoilerplateModel     = require('../../api/models/BoilerplateModel');
 var BoilerplateItemModel = require('../../api/models/BoilerplateItemModel');
 
 
 // #############################################################################
-// API ROUTES
+// Boilerplate API routes
 // #############################################################################
-
-// middleware to use for all requests
-router.use(function (request, response, next) {
-  console.log(request.method, request.url);
-  next(); // make sure we go to the next routes and don't stop here
-});
-
-router.route('/boilerplate')
+router.route('/')
   .get(function (request, response) {
     //find() here returns top-level populated item
     BoilerplateModel.find({}).populate('items').exec(function (error, boilerplate) {
@@ -77,7 +52,7 @@ router.route('/boilerplate')
     });
   });
 
-router.route('/boilerplate/:id')
+router.route('/:id')
   .get(function (request, response) {
     BoilerplateModel.findById(request.params.id).populate('items').exec(function (error, boilerplate) {
       if (error) {

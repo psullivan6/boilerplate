@@ -1,7 +1,3 @@
-// [TODO] Read the respective data .json files for the slugs and then translate
-// that into the html.pages info. Also translate it into non-substring info for
-// the server to test the release build
-
 module.exports = {
   paths: {
     project: './',
