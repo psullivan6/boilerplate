@@ -24,7 +24,11 @@
     "url": "https://github.com/psullivan6/boilerplate/issues"
   },
   "homepage": "https://github.com/psullivan6/boilerplate",
-  "cacheDirectories": ["node_modules", "release/libs", "_source/libs" ],
+  "cacheDirectories": [
+    "node_modules",
+    "release/libs",
+    "_source/libs"
+  ],
   "dependencies": {
     "body-parser": "^1.13.3",
     "bower": "^1.4.1",

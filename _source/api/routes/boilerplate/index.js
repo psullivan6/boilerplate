@@ -8,8 +8,9 @@ var router  = express.Router();
 // #############################################################################
 // Mongoose Models
 // #############################################################################
-var BoilerplateModel     = require('../../api/models/BoilerplateModel');
-var BoilerplateItemModel = require('../../api/models/BoilerplateItemModel');
+var modelsPath = '../../../api/models/';
+var BoilerplateModel     = require(modelsPath + 'boilerplate/BoilerplateModel');
+var BoilerplateItemModel = require(modelsPath + 'boilerplate/BoilerplateItemModel');
 
 
 // #############################################################################

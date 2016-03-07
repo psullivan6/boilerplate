@@ -1,6 +1,6 @@
 define([
   'backbone',
-  '../views/_boilerplate/BoilerplateView'
+  '../views/boilerplate/BoilerplateView'
 ], function (Backbone, BoilerplateView){
 
   var MainRouter = Backbone.Router.extend({
